@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import <PoP/POP.h>
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIView *animatedView;
 
 @end
 
@@ -24,6 +26,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - actions
+- (IBAction)fadeButtonPressed:(id)sender {
+    POPBasicAnimation *anim = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    anim.fromValue = @(1.0);
+    anim.toValue = @(0.0);
+    [self.animatedView pop_addAnimation:anim forKey:@"fade"];
 }
 
 @end
