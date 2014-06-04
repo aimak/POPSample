@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,7 +19,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u45-oo-n44" userLabel="View - animated View">
                                 <rect key="frame" x="110" y="134" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="E7v-lK-lDN"/>
@@ -30,29 +30,96 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjQ-ue-AtV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjQ-ue-AtV">
                                 <rect key="frame" x="28" y="316" width="35" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="1" id="5LS-h7-01s"/>
+                                </constraints>
                                 <state key="normal" title="Fade">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="Stop">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="fadeButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Wna-3a-tjy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sub-9F-usf">
+                                <rect key="frame" x="95" y="400" width="131" height="30"/>
+                                <state key="normal" title="Stop all animations">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAllAnimationsButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZXj-Zt-8po"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wQ-gw-pPi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIb-EG-oga">
+                                <rect key="frame" x="105" y="438" width="111" height="30"/>
+                                <state key="normal" title="Swipe and Swift">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="7J9-rf-AIH" kind="modal" id="Qx2-ri-GIw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XjQ-ue-AtV" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="296" id="O7f-Ve-kWi"/>
                             <constraint firstAttribute="centerX" secondItem="u45-oo-n44" secondAttribute="centerX" id="QrS-BU-FbK"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XjQ-ue-AtV" secondAttribute="trailing" constant="1" id="f2d-AN-8jV"/>
                             <constraint firstAttribute="centerY" secondItem="u45-oo-n44" secondAttribute="centerY" constant="100" id="f4i-6z-EcR"/>
+                            <constraint firstItem="XjQ-ue-AtV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="28" id="fwN-Do-S1P"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="XjQ-ue-AtV" secondAttribute="bottom" constant="222" id="wPw-nB-Glh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="animatedView" destination="u45-oo-n44" id="Dbb-lG-jmO"/>
+                        <outlet property="fadeButton" destination="XjQ-ue-AtV" id="4GX-fs-4O3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Swipe Animation View Controller-->
+        <scene sceneID="vhZ-Og-Duq">
+            <objects>
+                <viewController id="7J9-rf-AIH" customClass="SwipeAnimationViewController" customModule="PopSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VC7-Bj-23H"/>
+                        <viewControllerLayoutGuide type="bottom" id="SRN-e8-jRk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0RR-F7-F7r">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BPW-Jk-KMz">
+                                <rect key="frame" x="85" y="218" width="150" height="150"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.38823529410000002" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="ET5-rd-C3C"/>
+                                    <constraint firstAttribute="width" constant="150" id="xBv-Cc-aQJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="BPW-Jk-KMz" secondAttribute="centerY" constant="-9" id="WTg-Xw-VB4"/>
+                            <constraint firstAttribute="centerX" secondItem="BPW-Jk-KMz" secondAttribute="centerX" id="Y8V-Al-NtR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="52q-dn-rUb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f3s-Z2-ZJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="690" y="303"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

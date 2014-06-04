@@ -12,6 +12,10 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *animatedView;
 
+@property (weak, nonatomic) IBOutlet UIButton *fadeButton;
+
+@property (nonatomic, weak) POPBasicAnimation * fadeAnimation;
+
 @end
 
 @implementation ViewController
@@ -28,13 +32,35 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - configure animations
+
+- (void) createFadeAnimation {
+    self.fadeAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+    self.fadeAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    self.fadeAnimation.fromValue = @(1.0);
+    self.fadeAnimation.toValue = @(0.0);
+    self.fadeAnimation.duration = 5.0f;
+}
+
 #pragma mark - actions
-- (IBAction)fadeButtonPressed:(id)sender {
-    POPBasicAnimation *anim = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
-    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    anim.fromValue = @(1.0);
-    anim.toValue = @(0.0);
-    [self.animatedView pop_addAnimation:anim forKey:@"fade"];
+- (IBAction)fadeButtonPressed:(UIButton*)sender {
+    
+    if (sender.isSelected) {
+        [self.animatedView pop_removeAnimationForKey:@"fade"];
+        [sender setSelected:NO];
+    }
+    else {
+        if (!self.fadeAnimation) {
+            [self createFadeAnimation];
+        }
+        [sender setSelected:YES];
+        [self.animatedView pop_addAnimation:self.fadeAnimation forKey:@"fade"];
+    }
+}
+
+- (IBAction)stopAllAnimationsButtonPressed:(id)sender {
+    [self.animatedView pop_removeAllAnimations];
+    [self.fadeButton pop_removeAllAnimations];
 }
 
 @end
