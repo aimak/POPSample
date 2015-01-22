@@ -23,6 +23,7 @@
 		DA18587719167765004208A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA18585919167765004208A4 /* UIKit.framework */; };
 		DA18587F19167765004208A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA18587D19167765004208A4 /* InfoPlist.strings */; };
 		DA18588119167765004208A4 /* PopSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA18588019167765004208A4 /* PopSampleTests.m */; };
+		DA1E4B5D1944910C0062E0B2 /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1E4B5C1944910C0062E0B2 /* SwipeableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		DA18587C19167765004208A4 /* PopSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PopSampleTests-Info.plist"; sourceTree = "<group>"; };
 		DA18587E19167765004208A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA18588019167765004208A4 /* PopSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopSampleTests.m; sourceTree = "<group>"; };
+		DA1E4B5C1944910C0062E0B2 /* SwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				DA18585C19167765004208A4 /* Supporting Files */,
 				DA10DBA0193FB363001EBC2A /* SwipeAnimationViewController.swift */,
 				DA10DB9F193FB362001EBC2A /* PopSample-Bridging-Header.h */,
+				DA1E4B5C1944910C0062E0B2 /* SwipeableView.swift */,
 			);
 			path = PopSample;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			files = (
 				DA10DBA1193FB363001EBC2A /* SwipeAnimationViewController.swift in Sources */,
 				DA18586C19167765004208A4 /* ViewController.m in Sources */,
+				DA1E4B5D1944910C0062E0B2 /* SwipeableView.swift in Sources */,
 				DA18586619167765004208A4 /* AppDelegate.m in Sources */,
 				DA18586219167765004208A4 /* main.m in Sources */,
 			);
